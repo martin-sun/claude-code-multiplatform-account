@@ -1,0 +1,32 @@
+# ============================================
+# Claude Code - GLM-4.5 Configuration
+# ============================================
+# This file extends the base configuration with GLM-specific settings
+
+version: '3.8'
+
+services:
+  claude:
+    extends:
+      file: ../docker-compose.base.yml
+      service: x-claude-base
+
+    container_name: claude-glm
+
+    # GLM-specific entrypoint
+    entrypoint: /usr/local/bin/setup-glm.sh
+
+    # Volumes: claude data + workspace
+    volumes:
+      - ./claude-data:/home/claude/.claude
+      - ${WORKSPACE_PATH:-../../beancount-LLM/Beancount-LLM}:/workspace
+
+    # GLM-specific environment variables
+    environment:
+      - HOME=/home/claude
+      - CLAUDE_CONFIG_DIR=/home/claude/.claude
+      - CLAUDE_SKIP_ONBOARDING=true
+      - CLAUDE_CONFIG_FILE=/home/claude/.claude/settings.json
+      - AUTO_UPDATE_CLAUDE=${AUTO_UPDATE_CLAUDE:-false}
+      # Z.AI GLM-4.5 API key
+      - ZAI_API_KEY=${ZAI_API_KEY:-}

@@ -1,0 +1,39 @@
+# ============================================
+# Claude Code Base Configuration
+# ============================================
+# This file contains common configuration shared by all Claude instances
+# Use YAML anchors to define reusable configuration blocks
+
+version: '3.8'
+
+# Define reusable configuration blocks using YAML anchors
+x-claude-base: &claude-base
+  build:
+    context: .
+    dockerfile: Dockerfile
+    args:
+      # Support specifying Claude Code version, default to latest
+      - CLAUDE_VERSION=${CLAUDE_VERSION:-latest}
+
+  # Use root user to run initialization script, which will switch to claude user internally
+  user: root
+
+  # Common volume for claude data (override path in specific compose files)
+  volumes:
+    - ./claude-data:/home/claude/.claude
+
+  # Common environment variables
+  environment:
+    - HOME=/home/claude
+    - CLAUDE_CONFIG_DIR=/home/claude/.claude
+    - CLAUDE_SKIP_ONBOARDING=true
+    - CLAUDE_CONFIG_FILE=/home/claude/.claude/settings.json
+    # Enable auto-update on startup (default: false)
+    - AUTO_UPDATE_CLAUDE=${AUTO_UPDATE_CLAUDE:-false}
+
+  # Working directory
+  working_dir: /workspace
+
+  # Interactive mode (equivalent to -it)
+  stdin_open: true
+  tty: true

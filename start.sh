@@ -5,7 +5,7 @@
 # ============================================
 # Start Claude Code with different API providers
 
-set -e
+# Note: set -e is intentionally not used to avoid issues with interactive sessions
 
 # Colors for output
 GREEN='\033[0;32m'
@@ -68,6 +68,14 @@ start_service() {
     local service=$1
     local service_dir="${SCRIPT_DIR}/claude-${service}"
 
+    # Check if running in an interactive terminal
+    if [ ! -t 0 ]; then
+        echo -e "${YELLOW}Warning: Not running in an interactive terminal${NC}"
+        echo "This script requires an interactive terminal to work properly."
+        echo "Please run this script directly from your terminal."
+        exit 1
+    fi
+
     if [ ! -d "$service_dir" ]; then
         echo -e "${YELLOW}Error: Service directory not found: $service_dir${NC}"
         exit 1
@@ -87,8 +95,9 @@ start_service() {
     echo -e "${GREEN}========================================${NC}"
     echo ""
 
+    # Use exec to replace current shell process and ensure TTY is properly passed
     cd "$service_dir"
-    docker compose run --rm -it claude
+    exec docker compose run --rm -it claude
 }
 
 # Main logic

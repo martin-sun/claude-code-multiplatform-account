@@ -1,4 +1,8 @@
-# Claude Code Docker Launcher
+# Claude Code Multi-Provider Docker Launcher
+
+**🚀 Multi-Platform** | **👥 Multi-Account** | **🐳 Docker-Based** | **🔄 Easy Switch**
+
+### Switch Between Multiple AI Platforms and Accounts with Ease
 
 [中文文档](#中文文档) | [English](#english)
 
@@ -258,6 +262,14 @@ This project is provided as-is for educational and development purposes.
 ---
 
 ## 中文文档
+
+# Claude Code 多平台多账户启动器
+
+**🚀 多平台支持** | **👥 多账户管理** | **🐳 Docker 部署** | **🔄 灵活切换**
+
+### 轻松在多个 AI 平台和账户间切换
+
+---
 
 ### 项目概述
 

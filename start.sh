@@ -25,6 +25,9 @@ get_service_description() {
         glm)
             echo "GLM-4.5 (Z.AI)"
             ;;
+        default)
+            echo "Claude (Official Anthropic)"
+            ;;
         *)
             echo "Unknown"
             ;;
@@ -42,15 +45,16 @@ show_menu() {
     echo ""
     echo "  1) Kimi K2 (Moonshot AI)"
     echo "  2) GLM-4.5 (Z.AI)"
-    echo "  3) Exit"
+    echo "  3) Claude (Official Anthropic)"
+    echo "  4) Exit"
     echo ""
-    echo -n "Enter your choice [1-3]: "
+    echo -n "Enter your choice [1-4]: "
 }
 
 # Function to validate service
 is_valid_service() {
     case "$1" in
-        kimi|glm)
+        kimi|glm|default)
             return 0
             ;;
         *)
@@ -94,7 +98,7 @@ main() {
         service=$1
         if ! is_valid_service "$service"; then
             echo -e "${YELLOW}Error: Unknown service '$service'${NC}"
-            echo "Available services: kimi, glm"
+            echo "Available services: kimi, glm, default"
             exit 1
         fi
         start_service "$service"
@@ -116,12 +120,16 @@ main() {
                 break
                 ;;
             3)
+                start_service "default"
+                break
+                ;;
+            4)
                 echo ""
                 echo "Exiting..."
                 exit 0
                 ;;
             *)
-                echo -e "${YELLOW}Invalid choice. Please select 1-3.${NC}"
+                echo -e "${YELLOW}Invalid choice. Please select 1-4.${NC}"
                 sleep 1
                 ;;
         esac

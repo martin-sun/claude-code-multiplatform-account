@@ -32,6 +32,7 @@ RUN mkdir -p /home/claude/.claude && \
 # These will be copied during build context
 COPY claude-kimi/setup-kimi.sh /usr/local/bin/setup-kimi.sh
 COPY claude-glm/setup-glm.sh /usr/local/bin/setup-glm.sh
+COPY claude-default/setup-default.sh /usr/local/bin/setup-default.sh
 RUN chmod +x /usr/local/bin/setup-*.sh
 
 WORKDIR /workspace

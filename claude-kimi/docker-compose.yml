@@ -2,14 +2,11 @@
 # Claude Code - Kimi K2 Configuration
 # ============================================
 # This file extends the base configuration with Kimi-specific settings
-
-version: '3.8'
-
 services:
   claude:
     extends:
       file: ../docker-compose.base.yml
-      service: x-claude-base
+      service: claude-base
 
     container_name: claude-kimi
 

@@ -9,7 +9,7 @@ services:
   claude:
     extends:
       file: ../docker-compose.base.yml
-      service: x-claude-base
+      service: claude-base
 
     container_name: claude-glm
 

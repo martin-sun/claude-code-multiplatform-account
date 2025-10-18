@@ -23,7 +23,7 @@ get_service_description() {
             echo "Kimi K2 (Moonshot AI)"
             ;;
         glm)
-            echo "GLM-4.5 (Z.AI)"
+            echo "glm-4.6 (Z.AI)"
             ;;
         default)
             echo "Claude (Official Anthropic)"
@@ -44,7 +44,7 @@ show_menu() {
     echo "Select a service to start:"
     echo ""
     echo "  1) Kimi K2 (Moonshot AI)"
-    echo "  2) GLM-4.5 (Z.AI)"
+    echo "  2) glm-4.6 (Z.AI)"
     echo "  3) Claude (Official Anthropic)"
     echo "  4) Exit"
     echo ""

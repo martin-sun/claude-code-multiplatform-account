@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# GLM-4.5 初始化脚本
+# glm-4.6 初始化脚本
 # 基于 Z.AI 的 Claude Code 配置方案
 
 # 显示当前 Claude Code 版本
@@ -22,7 +22,7 @@ else
   echo "=========================================="
 fi
 
-echo "🚀 正在配置 Claude Code 连接 GLM-4.5..."
+echo "🚀 正在配置 Claude Code 连接 glm-4.6..."
 
 # 检查必要的环境变量
 if [ -z "$ZAI_API_KEY" ]; then
@@ -36,8 +36,8 @@ export ANTHROPIC_BASE_URL="https://api.z.ai/api/anthropic"
 export ANTHROPIC_AUTH_TOKEN="$ZAI_API_KEY"
 
 # 设置推荐的模型配置
-export ANTHROPIC_MODEL="glm-4.5"
-export ANTHROPIC_SMALL_FAST_MODEL="glm-4.5-air"
+export ANTHROPIC_MODEL="glm-4.6"
+export ANTHROPIC_SMALL_FAST_MODEL="glm-4.6-air"
 
 # 创建 Claude 配置目录
 mkdir -p /home/claude/.claude
@@ -48,17 +48,17 @@ cat > /home/claude/.claude/settings.json << EOF
   "env": {
     "ANTHROPIC_BASE_URL": "https://api.z.ai/api/anthropic",
     "ANTHROPIC_AUTH_TOKEN": "$ZAI_API_KEY",
-    "ANTHROPIC_MODEL": "glm-4.5",
-    "ANTHROPIC_SMALL_FAST_MODEL": "glm-4.5-air"
+    "ANTHROPIC_MODEL": "glm-4.6",
+    "ANTHROPIC_SMALL_FAST_MODEL": "glm-4.6-air"
   }
 }
 EOF
 
-echo "✅ GLM-4.5 配置完成!"
+echo "✅ glm-4.6 配置完成!"
 echo "📋 配置信息:"
 echo "   - Base URL: https://api.z.ai/api/anthropic"
-echo "   - 主模型: glm-4.5"
-echo "   - 快速模型: glm-4.5-air"
+echo "   - 主模型: glm-4.6"
+echo "   - 快速模型: glm-4.6-air"
 echo "   - API Key: ${ZAI_API_KEY:0:8}..."
 
 # 启动 Claude Code

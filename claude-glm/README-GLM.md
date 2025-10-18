@@ -1,11 +1,11 @@
-# GLM-4.5 配置说明
+# glm-4.6 配置说明
 
 ## 环境变量配置
 
 请在 `claude-z` 目录下创建 `.env` 文件，内容如下：
 
 ```bash
-# Z.AI GLM-4.5 配置
+# Z.AI glm-4.6 配置
 ZAI_API_KEY=你的_ZAI_API_KEY
 ```
 
@@ -31,11 +31,11 @@ ZAI_API_KEY=你的_ZAI_API_KEY
 ## 验证配置
 
 启动后，在 Claude Code 终端中输入 `/status` 查看当前模型配置，应该显示：
-- 主模型: glm-4.5
-- 快速模型: glm-4.5-air
+- 主模型: glm-4.6
+- 快速模型: glm-4.6-air
 
 ## 模型切换（可选）
 
-如需临时切换到 Air 版本，可修改 `claude-data/settings.json` 中的 `ANTHROPIC_MODEL` 为 `glm-4.5-air`。
+如需临时切换到 Air 版本，可修改 `claude-data/settings.json` 中的 `ANTHROPIC_MODEL` 为 `glm-4.6-air`。
 
 

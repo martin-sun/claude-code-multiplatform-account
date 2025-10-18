@@ -16,7 +16,7 @@ This project provides a Docker-based launcher for [Claude Code CLI](https://gith
 
 - **Claude** (Official Anthropic API) - Access to all official Claude models
 - **Kimi K2** (Moonshot AI) - Cost-effective Chinese alternative
-- **GLM-4.5** (Z.AI) - Another cost-effective Chinese alternative
+- **glm-4.6** (Z.AI) - Another cost-effective Chinese alternative
 
 ### Why This Project?
 
@@ -28,7 +28,7 @@ Claude Code CLI is an excellent tool for AI-assisted software development, but i
 
 This project solves these problems by:
 
-1. **Cost-Effective Alternatives**: Use Chinese AI providers (Kimi K2, GLM-4.5) with flexible pricing
+1. **Cost-Effective Alternatives**: Use Chinese AI providers (Kimi K2, glm-4.6) with flexible pricing
 2. **Multiple Provider Support**: Set up multiple provider accounts to distribute usage across different services
 3. **Easy Switching**: Switch between different providers based on your needs and budget
 4. **Unified Interface**: Same Claude Code CLI experience across all providers
@@ -51,7 +51,7 @@ This project solves these problems by:
 │   ├── setup-kimi.sh
 │   ├── .env.example
 │   └── claude-data/          # Kimi data directory
-└── claude-glm/               # GLM-4.5 configuration
+└── claude-glm/               # glm-4.6 configuration
     ├── docker-compose.yml
     ├── setup-glm.sh
     ├── .env.example
@@ -64,7 +64,7 @@ This project solves these problems by:
 - API key from one of the supported providers:
   - [Anthropic Console](https://console.anthropic.com/) for official Claude
   - [Moonshot AI Platform](https://platform.moonshot.cn/) for Kimi K2
-  - [Z.AI](https://api.z.ai/) for GLM-4.5
+  - [Z.AI](https://api.z.ai/) for glm-4.6
 
 ### Quick Start
 
@@ -92,7 +92,7 @@ This project solves these problems by:
    # Edit .env and add your KIMI_API_KEY
    ```
 
-   For GLM-4.5:
+   For glm-4.6:
    ```bash
    cd claude-glm
    cp .env.example .env
@@ -106,7 +106,7 @@ This project solves these problems by:
 
 4. **Select your service**
    - Choose `1` for Kimi K2
-   - Choose `2` for GLM-4.5
+   - Choose `2` for glm-4.6
    - Choose `3` for Claude (Official Anthropic)
    - Choose `4` to exit
 
@@ -121,7 +121,7 @@ Launch a specific service directly:
 # For Kimi K2
 ./start.sh kimi
 
-# For GLM-4.5
+# For glm-4.6
 ./start.sh glm
 ```
 
@@ -136,7 +136,7 @@ docker compose run --rm -it claude
 cd claude-kimi
 docker compose run --rm -it claude
 
-# For GLM-4.5
+# For glm-4.6
 cd claude-glm
 docker compose run --rm -it claude
 ```
@@ -177,7 +177,7 @@ AUTO_UPDATE_CLAUDE=false
 WORKSPACE_PATH=../../your-project
 ```
 
-#### GLM-4.5 (.env in claude-glm/)
+#### glm-4.6 (.env in claude-glm/)
 
 ```bash
 # Z.AI API Key (Required)
@@ -221,9 +221,9 @@ Once inside the Claude Code CLI:
 - Main Model: `moonshot-v1-32k`
 - Fast Model: `moonshot-v1-32k`
 
-#### GLM-4.5 (Z.AI)
-- Main Model: `glm-4.5`
-- Fast Model: `glm-4.5-air`
+#### glm-4.6 (Z.AI)
+- Main Model: `glm-4.6`
+- Fast Model: `glm-4.6-air`
 
 ### Troubleshooting
 
@@ -277,7 +277,7 @@ This project is provided as-is for educational and development purposes.
 
 - **Claude** (Anthropic 官方 API) - 访问所有官方 Claude 模型
 - **Kimi K2** (月之暗面) - 性价比高的国内替代方案
-- **GLM-4.5** (智谱 AI) - 另一个性价比高的国内替代方案
+- **glm-4.6** (智谱 AI) - 另一个性价比高的国内替代方案
 
 ### 为什么需要这个项目？
 
@@ -289,7 +289,7 @@ Claude Code CLI 是一个优秀的 AI 辅助开发工具，但官方仅支持 An
 
 本项目通过以下方式解决了这些问题：
 
-1. **性价比更高**：使用国内 AI 服务商（Kimi K2、GLM-4.5），定价更灵活
+1. **性价比更高**：使用国内 AI 服务商（Kimi K2、glm-4.6），定价更灵活
 2. **多账户支持**：可配置多个服务商账户，在不同服务间分散使用量
 3. **灵活切换**：根据需求和预算在不同服务商间切换
 4. **统一体验**：在所有服务商间使用相同的 Claude Code CLI 界面
@@ -312,7 +312,7 @@ Claude Code CLI 是一个优秀的 AI 辅助开发工具，但官方仅支持 An
 │   ├── setup-kimi.sh
 │   ├── .env.example
 │   └── claude-data/          # Kimi 数据目录
-└── claude-glm/               # GLM-4.5 配置
+└── claude-glm/               # glm-4.6 配置
     ├── docker-compose.yml
     ├── setup-glm.sh
     ├── .env.example
@@ -325,7 +325,7 @@ Claude Code CLI 是一个优秀的 AI 辅助开发工具，但官方仅支持 An
 - 以下服务商之一的 API 密钥：
   - [Anthropic 控制台](https://console.anthropic.com/) - 官方 Claude
   - [月之暗面开放平台](https://platform.moonshot.cn/) - Kimi K2
-  - [智谱 AI](https://api.z.ai/) - GLM-4.5
+  - [智谱 AI](https://api.z.ai/) - glm-4.6
 
 ### 快速开始
 
@@ -353,7 +353,7 @@ Claude Code CLI 是一个优秀的 AI 辅助开发工具，但官方仅支持 An
    # 编辑 .env 文件，填入你的 KIMI_API_KEY
    ```
 
-   使用 GLM-4.5：
+   使用 glm-4.6：
    ```bash
    cd claude-glm
    cp .env.example .env
@@ -367,7 +367,7 @@ Claude Code CLI 是一个优秀的 AI 辅助开发工具，但官方仅支持 An
 
 4. **选择服务**
    - 选择 `1` 使用 Kimi K2
-   - 选择 `2` 使用 GLM-4.5
+   - 选择 `2` 使用 glm-4.6
    - 选择 `3` 使用 Claude (Anthropic 官方)
    - 选择 `4` 退出
 
@@ -382,7 +382,7 @@ Claude Code CLI 是一个优秀的 AI 辅助开发工具，但官方仅支持 An
 # 启动 Kimi K2
 ./start.sh kimi
 
-# 启动 GLM-4.5
+# 启动 glm-4.6
 ./start.sh glm
 ```
 
@@ -397,7 +397,7 @@ docker compose run --rm -it claude
 cd claude-kimi
 docker compose run --rm -it claude
 
-# 使用 GLM-4.5
+# 使用 glm-4.6
 cd claude-glm
 docker compose run --rm -it claude
 ```
@@ -438,7 +438,7 @@ AUTO_UPDATE_CLAUDE=false
 WORKSPACE_PATH=../../your-project
 ```
 
-#### GLM-4.5 配置 (claude-glm/.env)
+#### glm-4.6 配置 (claude-glm/.env)
 
 ```bash
 # Z.AI API 密钥（必填）
@@ -482,9 +482,9 @@ WORKSPACE_PATH=../../your-project
 - 主模型：`moonshot-v1-32k`
 - 快速模型：`moonshot-v1-32k`
 
-#### GLM-4.5 (智谱 AI)
-- 主模型：`glm-4.5`
-- 快速模型：`glm-4.5-air`
+#### glm-4.6 (智谱 AI)
+- 主模型：`glm-4.6`
+- 快速模型：`glm-4.6-air`
 
 ### 常见问题
 

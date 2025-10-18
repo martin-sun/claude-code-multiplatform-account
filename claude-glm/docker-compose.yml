@@ -1,5 +1,5 @@
 # ============================================
-# Claude Code - GLM-4.5 Configuration
+# Claude Code - glm-4.6 Configuration
 # ============================================
 # This file extends the base configuration with GLM-specific settings
 
@@ -28,5 +28,5 @@ services:
       - CLAUDE_SKIP_ONBOARDING=true
       - CLAUDE_CONFIG_FILE=/home/claude/.claude/settings.json
       - AUTO_UPDATE_CLAUDE=${AUTO_UPDATE_CLAUDE:-false}
-      # Z.AI GLM-4.5 API key
+      # Z.AI glm-4.6 API key
       - ZAI_API_KEY=${ZAI_API_KEY:-}
